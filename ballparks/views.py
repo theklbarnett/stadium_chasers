@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+def render_login(request):
+	pass
+
+def render_home(request):
+	pass
+
+def render_park(request):
+	pass
