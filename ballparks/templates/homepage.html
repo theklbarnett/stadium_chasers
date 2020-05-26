@@ -17,6 +17,30 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_diFlhZur7BRvK9UJVXtU5akeXjDEFmU&callback=initMap"
         type="text/javascript"></script>
     <link rel="stylesheet" href="static style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#teams').change(function() {
+                var selectedTeam = $(this).val();
+                var teamInfo = {};
+                $.get("https://gist.githubusercontent.com/the55/2155142/raw/30a251395cd3c04771f29f2a6295fc8849b73d11/mlb_stadium.json", function(res) {
+                        for (var i = 0; i < res.length; i++) {
+                            if (res[i]['team'] == selectedTeam) {
+                                console.log(res[i]);
+                                teamInfo = res[i];
+                            }
+                        }
+                        if (teamInfo) {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: { lat: teamInfo['lat'], lng: teamInfo['lng'] },
+                                zoom: 10
+                            });
+                            var marker = new google.maps.Marker({position: { lat: teamInfo['lat'], lng: teamInfo['lng'] }, map: map});
+                        }
+                    }, "json");     
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -36,7 +60,7 @@
                 <option value="Baltimore Orioles">Baltimore Orioles</option>
                 <option value="Boston Red Sox">Boston Red Sox</option>
                 <option value="New York Yankees">New York Yankees</option>
-                <option value="Tampa Bay Rays">Tampa Bay Rays</option>
+                <option value="Tampa Bay Devil Rays">Tampa Bay Rays</option>
                 <option value="Toronto Blue Jays">Toronto Blue Jays</option>
             </optgroup>
             <optgroup label="AL West">
