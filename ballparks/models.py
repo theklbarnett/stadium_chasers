@@ -16,14 +16,14 @@ class UserManager(models.Manager):
 			errors['unique'] = "Email address already exists"
 		if len(post_data['password']) < 8:
 			errors['password'] = "Password must be at least 8 characters"
-		if post_data['password'] != post_data['pw_confirm']:
-			errors['pw_confirm'] = "Passwords did not match"
+		if post_data['password'] != post_data['confirm_password']:
+			errors['confirm_password'] = "Passwords did not match"
 		return errors
 
 	def authentication_validator(self, post_data):
 		errors = {}
-		if User.objects.filter(email=post_data['email_login']):
-			if not bcrypt.checkpw(post_data['password_login'].encode(), User.objects.get(email=post_data['email_login']).password_hash.encode()):
+		if User.objects.filter(email=post_data['email']):
+			if not bcrypt.checkpw(post_data['password'].encode(), User.objects.get(email=post_data['email']).password_hash.encode()):
 				errors['password'] = "Incorrect password"
 		else:
 			errors['email'] = 'This email does not exist'
