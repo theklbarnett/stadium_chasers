@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def login_user(request):
-	pass
+	return render(request, 'login.html')
 
 def homepage(request):
 	return render(request, 'homepage.html')
