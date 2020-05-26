@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
-def render_login(request):
+def login_user(request):
 	return render(request, 'login.html')
 
-def render_home(request):
+def homepage(request):
 	return render(request, 'homepage.html')
 
 def render_park(request):
