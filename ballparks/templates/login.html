@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Stadium Chasers - Login and Registration</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+        
+
+        <body>
+
+
+
+                <div id="skin">
+
+                        <div id="login_wrapper">
+
+
+
+                                <div class='login_form-box'>
+                                        <h2>Login:</h2>
+                                        <form action="/login_user" method="POST">
+                                                {% csrf_token %}
+                                                <label> Email:</label> <input type="text" name="email"></br>
+                                                <label>Password:</label> <input type="password" name="password"></br>
+                                                <input type="submit" value="Login"></br>
+
+                                        </form>
+
+                                </div>
+                                <div class='login_form-box'>
+                                        <h2>Lets play Ball!</h2>
+                                        <h2>Register:</h2>
+                                        <form action="/create_user" method="POST">
+                                                {% csrf_token %}
+                                                <label>First Name:</label> <input type="text" name="first_name"></br>
+                                                <label>Last Name:</label> <input type="text" name="last_name"></br>
+                                                <label>Email:</label> <input type="text" name="email"></br>
+                                                <label>Password:</label> <input type="password" name="password"></br>
+                                                <label>Confirm Password:</label> <input type="password"
+                                                        name="confirm_password"></br>
+                                                <input type="submit" value="Register">
+
+                                        </form>
+                                        {% if messages %}
+                                        <div id='errors'>
+                                                {% for message in messages %}
+                                                <p>- {{message}} -</p>
+                                                {% endfor %}
+                                        </div>
+                                        {% endif %}
+
+                                </div>
+                                <img id="register_pic"
+                                        src="https://miro.medium.com/max/2800/0*Su_7B7tHrYIZ-zcZ.jpg"
+                                        alt="MLB logo">
+
+
+
+
+
+
+
+                        </div>
+                </div>
+        </body>
+</body>
+
+</html>
