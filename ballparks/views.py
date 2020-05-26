@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-def render_login(request):
+def login_user(request):
 	pass
 
-def render_home(request):
-	pass
+def homepage(request):
+	return render(request, 'homepage.html')
 
 def render_park(request):
 	pass
