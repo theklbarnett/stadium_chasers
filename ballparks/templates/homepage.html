@@ -5,104 +5,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ballpark Chasers</title>
-    <style>
-        #map {
-            height: 400px;
-            /* The height is 400 pixels */
-            width: 80%;
-            /* The width is the width of the web page */
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_diFlhZur7BRvK9UJVXtU5akeXjDEFmU&callback=initMap"
         type="text/javascript"></script>
     <link rel="stylesheet" href="static style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#teams').change(function() {
+        $(document).ready(function () {
+            $('#teams').change(function () {
                 var selectedTeam = $(this).val();
                 var teamInfo = {};
-                $.get("https://gist.githubusercontent.com/the55/2155142/raw/30a251395cd3c04771f29f2a6295fc8849b73d11/mlb_stadium.json", function(res) {
-                        for (var i = 0; i < res.length; i++) {
-                            if (res[i]['team'] == selectedTeam) {
-                                console.log(res[i]);
-                                teamInfo = res[i];
-                            }
+                $.get("https://gist.githubusercontent.com/the55/2155142/raw/30a251395cd3c04771f29f2a6295fc8849b73d11/mlb_stadium.json", function (res) {
+                    for (var i = 0; i < res.length; i++) {
+                        if (res[i]['team'] == selectedTeam) {
+                            console.log(res[i]);
+                            teamInfo = res[i];
                         }
-                        if (teamInfo) {
-                            map = new google.maps.Map(document.getElementById('map'), {
-                                center: { lat: teamInfo['lat'], lng: teamInfo['lng'] },
-                                zoom: 10
-                            });
-                            var marker = new google.maps.Marker({position: { lat: teamInfo['lat'], lng: teamInfo['lng'] }, map: map});
-                        }
-                    }, "json");     
+                    }
+                    if (teamInfo) {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: { lat: teamInfo['lat'], lng: teamInfo['lng'] },
+                            zoom: 10
+                        });
+                        var marker = new google.maps.Marker({ position: { lat: teamInfo['lat'], lng: teamInfo['lng'] }, map: map });
+                    }
+                }, "json");
             });
         });
     </script>
 </head>
 
 <body>
-    <h1>Welcome to MLB Ballpark Chasers!</h1>
-    <img src="./static/MLB_logo.png" alt="MLB Logo">
-    <div id="team_dropdown_list">
-        <h3>Choose your team:</h3>
-        <select id="teams">
-            <optgroup label="AL Central">
-                <option value="Chicago White Sox">Chicago White Sox</option>
-                <option value="Cleveland Indians">Cleveland Indians</option>
-                <option value="Detroit Tigers">Detroit Tigers</option>
-                <option value="Kansas City Royals">Kansas City Royals</option>
-                <option value="Minnesota Twins">Minnesota Twins</option>
-            </optgroup>
-            <optgroup label="AL East">
-                <option value="Baltimore Orioles">Baltimore Orioles</option>
-                <option value="Boston Red Sox">Boston Red Sox</option>
-                <option value="New York Yankees">New York Yankees</option>
-                <option value="Tampa Bay Devil Rays">Tampa Bay Rays</option>
-                <option value="Toronto Blue Jays">Toronto Blue Jays</option>
-            </optgroup>
-            <optgroup label="AL West">
-                <option value="Houston Astros">Houston Astros</option>
-                <option value="Los Angeles Angels">Los Angeles Angels</option>
-                <option value="Oakland Athletics">Oakland Athletics</option>
-                <option value="Seattle Mariners">Seattle Mariners</option>
-                <option value="Texas Rangers">Texas Rangers</option>
-            </optgroup>
-            <optgroup label="NL Central">
-                <option value="Chicago Cubs">Chicago Cubs</option>
-                <option value="Cincinnati Reds">Cincinnati Reds</option>
-                <option value="Milwaukee Brewers">Milwaukee Brewers</option>
-                <option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
-                <option value="St. Louis Cardinals">St. Louis Cardinals</option>
-            </optgroup>
-            <optgroup label="NL East">
-                <option value="Atlanta Braves">Atlanta Braves</option>
-                <option value="Miami Marlins">Miami Marlins</option>
-                <option value="New York Mets">New York Mets</option>
-                <option value="Philadelphia Phillies">Philadelphia Phillies</option>
-                <option value="Washington Nationals">Washington Nationals</option>
-            </optgroup>
-            <optgroup label="NL West">
-                <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
-                <option value="Colorado Rockies">Colorado Rockies</option>
-                <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
-                <option value="San Diego Padres">San Diego Padres</option>
-                <option value="San Francisco Giants">San Francisco Giants</option>
-            </optgroup>
-        </select>
+    <div id="skin">
+        <div id="wrapper">
+            <div id="title">
+                <h1>Welcome to MLB Ballpark Chasers!</h1>
+            </div>
+            <img id="MLB_logo"
+                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                alt="MLB Logo">
+            <div id='team_input_box'>
+                <div id="team_dropdown_list">
+                    <h3>Choose your team:</h3>
+                    <select id="teams">
+                        <optgroup label="AL Central">
+                            <option value="Chicago White Sox">Chicago White Sox</option>
+                            <option value="Cleveland Indians">Cleveland Indians</option>
+                            <option value="Detroit Tigers">Detroit Tigers</option>
+                            <option value="Kansas City Royals">Kansas City Royals</option>
+                            <option value="Minnesota Twins">Minnesota Twins</option>
+                        </optgroup>
+                        <optgroup label="AL East">
+                            <option value="Baltimore Orioles">Baltimore Orioles</option>
+                            <option value="Boston Red Sox">Boston Red Sox</option>
+                            <option value="New York Yankees">New York Yankees</option>
+                            <option value="Tampa Bay Devil Rays">Tampa Bay Rays</option>
+                            <option value="Toronto Blue Jays">Toronto Blue Jays</option>
+                        </optgroup>
+                        <optgroup label="AL West">
+                            <option value="Houston Astros">Houston Astros</option>
+                            <option value="Los Angeles Angels">Los Angeles Angels</option>
+                            <option value="Oakland Athletics">Oakland Athletics</option>
+                            <option value="Seattle Mariners">Seattle Mariners</option>
+                            <option value="Texas Rangers">Texas Rangers</option>
+                        </optgroup>
+                        <optgroup label="NL Central">
+                            <option value="Chicago Cubs">Chicago Cubs</option>
+                            <option value="Cincinnati Reds">Cincinnati Reds</option>
+                            <option value="Milwaukee Brewers">Milwaukee Brewers</option>
+                            <option value="Pittsburgh Pirates">Pittsburgh Pirates</option>
+                            <option value="St. Louis Cardinals">St. Louis Cardinals</option>
+                        </optgroup>
+                        <optgroup label="NL East">
+                            <option value="Atlanta Braves">Atlanta Braves</option>
+                            <option value="Miami Marlins">Miami Marlins</option>
+                            <option value="New York Mets">New York Mets</option>
+                            <option value="Philadelphia Phillies">Philadelphia Phillies</option>
+                            <option value="Washington Nationals">Washington Nationals</option>
+                        </optgroup>
+                        <optgroup label="NL West">
+                            <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
+                            <option value="Colorado Rockies">Colorado Rockies</option>
+                            <option value="Los Angeles Dodgers">Los Angeles Dodgers</option>
+                            <option value="San Diego Padres">San Diego Padres</option>
+                            <option value="San Francisco Giants">San Francisco Giants</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div id="map">
+                <script>
+                    var map;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: { lat: 39.50, lng: -98.35 },
+                            zoom: 4
+                        });
+                    }
+                </script>
+            </div>
+        </div>
     </div>
-    <div id="map"></div>
-    <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 39.50, lng: -98.35 },
-                zoom: 4
-            });
-        }
-    </script>
 </body>
 
 </html>
