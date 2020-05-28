@@ -41,6 +41,6 @@ class User(models.Model):
 class Ballpark(models.Model):
 	team = models.CharField(max_length=255)
 	visited = models.BooleanField()
-	users = models.ManyToManyField(User, related_name='ballparks')
+	user = models.ForeignKey(User, related_name='ballparks', on_delete=models.CASCADE)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)

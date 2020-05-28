@@ -16,8 +16,9 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script>
         $(document).ready(function () {
+            var selectedTeam = null;
             $('#teams').change(function () {
-                var selectedTeam = $(this).val();
+                selectedTeam = $(this).val();
                 var teamInfo = {};
                 $.get("https://gist.githubusercontent.com/the55/2155142/raw/30a251395cd3c04771f29f2a6295fc8849b73d11/mlb_stadium.json", function (res) {
                     for (var i = 0; i < res.length; i++) {
@@ -35,6 +36,19 @@
                     }
                 }, "json");
             });
+
+            $('#bucket').click(function() {
+                $.ajax({
+                    url: '/home/add-to-bucketlist',
+                    data: {
+                        'team': selectedTeam
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        
+                    }
+                });
+            })
         });
     </script>
 </head>
@@ -156,6 +170,7 @@
                     }
                 </script>
             </div>
+            <button id="bucket">Add to My BucketList</button>
         </div>
     </div>
 </body>
