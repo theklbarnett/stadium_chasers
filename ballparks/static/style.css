@@ -10,7 +10,7 @@
 #wrapper{
 
         margin: 0px auto;
-        background-color: grey;
+        background-color: #f2f2f2;
         width: 90%;
         height: 90%;
         font-family: sans-serif;
@@ -19,6 +19,9 @@
 #title{
         text-align: center;
         font-size: large;
+        background-color: #ffffff;
+        border: 5px solid #000080;
+        
 }
 
 #map {
@@ -43,11 +46,21 @@
 #MLB_logo{
 
         width: 175px;
-        height: 100px;
+        height: 99px;
         position: absolute;
-        top: 8px;
+        top: 33px;
         left: 72px;
         
+}
+
+#MLB_logo_2{
+        width: 175px;
+        height: 99px;
+        position: absolute;
+        top: 33px;
+        right: 72px;
+
+
 }
 #team_input_box{
         width: 600px;
