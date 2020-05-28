@@ -48,12 +48,21 @@
             <img id="MLB_logo"
                 src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
                 alt="MLB Logo">
-                <img id="MLB_logo_2"
+            <img id="MLB_logo_2"
                 src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
                 alt="MLB Logo">
+            
             <div id='team_input_box'>
+                <div id="starting_location">
+                    <h3>Starting location:</h3>
+                    <form action="/start" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="location">
+                        <input type="submit" value="Find Me!">
+                 </form>
+                </div>
                 <div id="team_dropdown_list">
-                    <h3>Choose your team:</h3>
+                    <h3>Select a Stadium you want to visit:</h3>
                     <select id="teams">
                         <optgroup label="AL Central">
                             <option value="Chicago White Sox">Chicago White Sox</option>
@@ -99,6 +108,8 @@
                         </optgroup>
                     </select>
                 </div>
+
+
             </div>
             <div id="map">
                 <script>
