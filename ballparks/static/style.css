@@ -218,6 +218,7 @@ body, html {
         height: auto;
         font-family: sans-serif;
         padding: 25px;
+        display: inline-block;
 
 
 }
@@ -230,5 +231,54 @@ body, html {
 
         height: 200px;
         width: 300px;
+        display: inline-block;
 }
+
+.img_container {
+        position: relative;
+        text-align: center;
+        
+        display: inline-block;
+        
+      }
+      
+      .image {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #003a66;
+        display: inline-block;
+      }
+      
+      .img_container:hover .overlay {
+        opacity: 1;
+        display: inline-block;
+      }
+      
+      .stadium_text {
+        color: white;
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: left;
+      }
+
+
 
