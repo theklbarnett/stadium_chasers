@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 import bcrypt
+from django.http import JsonResponse
 from .models import User, Ballpark
 
 
@@ -64,7 +65,10 @@ def tracker(request):
 	return render (request, 'tracker.html')
 
 def bucket (request):
-	return render (request, 'bucket.html')
+	context = {
+		'stadiums': Ballpark.objects.filter(user=User.objects.get(id=request.session['user_id']))
+	}
+	return render (request, 'bucket.html', context)
 
 
 def logout(request):
@@ -72,3 +76,12 @@ def logout(request):
 	request.session.flush()
 
 	return redirect('/')
+
+def bucket_add(request):
+	print('hi')
+	team = request.GET.get('team', None).replace('-', ' ')
+	Ballpark.objects.create(team=team, visited=False, user=User.objects.get(id=request.session['user_id']))
+	data = {
+		'complete': True
+	}
+	return JsonResponse(data)

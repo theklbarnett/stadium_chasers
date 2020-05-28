@@ -10,5 +10,8 @@
 </head>
 <body>
         <h2>list of where you want to go?</h2>
+        {% for stadium in stadiums %}
+        	<p>{{stadium.team}}</p>
+        {% endfor %}
 </body>
 </html>
