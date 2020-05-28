@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>American League Stadiums</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+        <div id="skin">
+                <div id="wrapper">
+                        <div id="title">
+                                <h1>American League Ball Parks</h1>
+                        </div>
+                        <img id="MLB_logo"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <img id="MLB_logo_2"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <div class="navbar">
+                                <a href="/home">Home</a>
+                                <a href="/news">News</a>
+                                <li style="float:right"><a href="/logout">Logout</a></li>
+                                <div class="dropdown">
+                                        <button class="dropbtn" onclick="myFunction()">Stadiums
+                                                <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="dropdown-content" id="myDropdown">
+                                                <a href="/american">American League</a>
+                                                <a href="/national">National League</a>
+                                                <a href="/tracker">Where I've been</a>
+                                                <a href="/bucket">Bucket List</a>
+                                        </div>
+
+                                </div>
+                        </div>
+
+                        <script>
+
+                                function myFunction() {
+                                        document.getElementById("myDropdown").classList.toggle("show");
+                                }
+
+
+                                window.onclick = function (e) {
+                                        if (!e.target.matches('.dropbtn')) {
+                                                var myDropdown = document.getElementById("myDropdown");
+                                                if (myDropdown.classList.contains('show')) {
+                                                        myDropdown.classList.remove('show');
+                                                }
+                                        }
+                                }
+                        </script>
+                        <div class="stadium_container">
+                                <div class="stadium_img">
+                                        <h3>CAMDEN YARDS</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/02/camden_top-1.jpg"
+                                                        alt="CAMDEN YARDS">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>COMERICA PARK</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/comerica17_top.jpg"
+                                                        alt="Comerica Park">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>ANGEL STADIUM</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/02/angel15955.jpg"
+                                                        alt="Angel Stadium">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>FENWAY PARK</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/fenway17952.jpg"
+                                                        alt="Fenway Park">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>GUARANTEED RATE FIELD</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/guaranteed_top.jpg"
+                                                        alt="GUARANTEED RATE FIELD">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>GLOBE LIFE FIELD</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/06/glf20-952.jpeg"
+                                                        alt="GLOBE LIFE FIELD">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>ROGERS CENTRE</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/rogers179532.jpg"
+                                                        alt="ROGERS CENTRE">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>KAUFFMAN STADIUM</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/kauff15952.jpg"
+                                                        alt="KAUFFMAN STADIUM">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>MINUTE MAID PARK</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/minute_topv3.jpg"
+                                                        alt="MINUTE MAID PARK">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>TROPICANA FIELD</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/tropicana_topv2.jpg"
+                                                        alt="TROPICANA FIELD">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>PROGRESSIVE FIELD</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/progressive17_top.jpg"
+                                                        alt="PROGRESSIVE FIELD">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>RINGCENTRAL COLISEUM</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/oco_topv2.jpg"
+                                                        alt="RINGCENTRAL COLISEUM">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>YANKEE STADIUM</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/yankee_topv2.jpg"
+                                                        alt="YANKEE STADIUM">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>TARGET FIELD</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/target_topv2.jpg"
+                                                        alt="TARGET FIELD">
+
+                                 </div>
+                                 <div class="stadium_img">
+                                        <h3>T-MOBILE PARK</h3>
+                                        <a href="/Camden_yards"></a>
+                                                <img src="https://www.ballparksofbaseball.com/wp-content/uploads/2016/03/safeco17950.jpg"
+                                                        alt="T-MOBILE PARK">
+
+                                 </div>
+
+
+                        </div>
+
+
+
+
+
+                </div>
+
+        </div>
+        </div>
+</body>
+
+</html>

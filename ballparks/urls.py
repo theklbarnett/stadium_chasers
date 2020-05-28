@@ -23,5 +23,10 @@ urlpatterns = [
     path('home/', views.homepage),
     path('login_user/', views.authenticate_user),
     path('create_user/', views.register_user),
+    path('american', views.stadium_info),
+    path('national', views.national_stadiums),
+    path('tracker', views.tracker),
+    path('bucket', views.bucket),
+    path('logout', views.logout)
 
 ]

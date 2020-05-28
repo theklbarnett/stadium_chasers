@@ -48,12 +48,55 @@
             <img id="MLB_logo"
                 src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
                 alt="MLB Logo">
-                <img id="MLB_logo_2"
+            <img id="MLB_logo_2"
                 src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
                 alt="MLB Logo">
+            <div class="navbar">
+                <a href="/home">Home</a>
+                <a href="/news">News</a>
+                <li style="float:right"><a href="/logout">Logout</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">Stadiums
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="/american">American League</a>
+                        <a href="/national">National League</a>
+                        <a href="/tracker">Where I've been</a>
+                        <a href="/bucket">Bucket List</a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <script>
+
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+
+                window.onclick = function (e) {
+                    if (!e.target.matches('.dropbtn')) {
+                        var myDropdown = document.getElementById("myDropdown");
+                        if (myDropdown.classList.contains('show')) {
+                            myDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            </script>
+
             <div id='team_input_box'>
+                <div id="starting_location">
+                    <h3>Starting location:</h3>
+                    <form action="/start" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="location">
+                        <input type="submit" value="Find Me!">
+                    </form>
+                </div>
                 <div id="team_dropdown_list">
-                    <h3>Choose your team:</h3>
+                    <h3>Select a Stadium you want to visit:</h3>
                     <select id="teams">
                         <optgroup label="AL Central">
                             <option value="Chicago White Sox">Chicago White Sox</option>
@@ -99,6 +142,8 @@
                         </optgroup>
                     </select>
                 </div>
+
+
             </div>
             <div id="map">
                 <script>
