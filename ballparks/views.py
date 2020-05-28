@@ -66,7 +66,7 @@ def tracker(request):
 
 def bucket (request):
 	context = {
-		'stadiums': User.objects.get(id=request.session['user_id']).ballparks
+		'stadiums': Ballpark.objects.filter(user=User.objects.get(id=request.session['user_id']))
 	}
 	return render (request, 'bucket.html', context)
 
@@ -78,7 +78,8 @@ def logout(request):
 	return redirect('/')
 
 def bucket_add(request):
-	team = request.GET.get('email', None)
+	print('hi')
+	team = request.GET.get('team', None).replace('-', ' ')
 	Ballpark.objects.create(team=team, visited=False, user=User.objects.get(id=request.session['user_id']))
 	data = {
 		'complete': True

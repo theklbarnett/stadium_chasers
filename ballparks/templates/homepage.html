@@ -38,14 +38,16 @@
             });
 
             $('#bucket').click(function() {
+                console.log(selectedTeam);
                 $.ajax({
                     url: '/home/add-to-bucketlist',
                     data: {
-                        'team': selectedTeam
+                        'team': selectedTeam.replace(' ', '-')
                     },
                     dataType: 'json',
                     success: function (data) {
-                        
+                        if (data['complete'] == true) {
+                        }
                     }
                 });
             })
