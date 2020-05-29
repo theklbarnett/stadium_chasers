@@ -28,7 +28,7 @@
     display: inline-block;
     width: 600px;
     height: 400px;
-    margin-top: 200px;
+    margin-top: 175px;
 }
 
 #team_dropdown_list {
@@ -82,7 +82,7 @@
         vertical-align: top;
         text-align: center;
         margin-left: 200px;
-        margin-top: 200px;
+        margin-top: 175px;
        
 }
 /*nav bar*/
@@ -151,7 +151,7 @@
 
 /*login page*/
 #login_wrapper{ 
-        width: 888px;
+        width: 745px;
         height: 350px;
         position: absolute;
         left: 50%;
@@ -188,16 +188,40 @@ body, html {
 .login_form-box{
 
         display: inline-block;
-        background-color: whitesmoke;
+        background-color: rgba(245, 245, 245, 0.753);
         width: 300px;
         min-height: 300px;
-        padding: 70px;
+        padding: 35px;
         vertical-align: top;
+        border-radius: 15px;
         
         
         opacity: 100%;
         
 }
+
+        .login_form-box input {
+                width: 250px;
+                height: 25px;
+                margin: 5px 0px;
+                border: 2px;
+                padding: 1px 2px;
+        }
+
+        .login_form-box h2 {
+                text-align: center;
+        }
+
+        .login_form-box form {
+                padding-left: 25px;
+        }
+
+        #login_button, #register_button {
+                width: 150px;
+                margin-left: 50px;
+        }
+
+
 #register_pic{
         vertical-align: top;
         display: inline-block;
