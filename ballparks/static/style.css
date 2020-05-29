@@ -12,7 +12,7 @@
         margin: 0px auto;
         background-color: #f2f2f2;
         width: 90%;
-        height: 90%;
+        height: 100%;
         font-family: sans-serif;
         padding: 25px;
 }
@@ -270,7 +270,7 @@ body, html {
       
       .stadium_text {
         color: white;
-        font-size: 14px;
+        font-size: 12px;
         position: absolute;
         top: 50%;
         left: 50%;
