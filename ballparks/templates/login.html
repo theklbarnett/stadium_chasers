@@ -27,25 +27,23 @@
                                         <h2>Login:</h2>
                                         <form action="login_user/" method="POST">
                                                 {% csrf_token %}
-                                                <label> Email:</label> <input type="text" name="email"></br>
-                                                <label>Password:</label> <input type="password" name="password"></br>
-                                                <input type="submit" value="Login"></br>
-
+                                                <input type="text" name="email" placeholder="Email"></br>
+                                                <input type="password" name="password" placeholder="Password"></br>
+                                                <input id="login_button" type="submit" value="Login"></br>
                                         </form>
 
                                 </div>
                                 <div class='login_form-box'>
-                                        <h2>Lets play Ball!</h2>
                                         <h2>Register:</h2>
                                         <form action="create_user/" method="POST">
                                                 {% csrf_token %}
-                                                <label>First Name:</label> <input type="text" name="first_name"></br>
-                                                <label>Last Name:</label> <input type="text" name="last_name"></br>
-                                                <label>Email:</label> <input type="text" name="email"></br>
-                                                <label>Password:</label> <input type="password" name="password"></br>
-                                                <label>Confirm Password:</label> <input type="password"
-                                                        name="confirm_password"></br>
-                                                <input type="submit" value="Register">
+                                                <input type="text" name="first_name" placeholder="First Name"></br>
+                                                <input type="text" name="last_name" placeholder="Last Name"></br>
+                                                <input type="text" name="email" placeholder="Email"></br>
+                                                <input type="password" name="password" placeholder="Password"></br>
+                                                <input type="password"
+                                                        name="confirm_password" placeholder="Confirm Password"></br>
+                                                <input id="register_button" type="submit" value="Register">
 
                                         </form>
                                         {% if messages %}
