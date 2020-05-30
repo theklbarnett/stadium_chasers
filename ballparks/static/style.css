@@ -287,6 +287,7 @@ body, html {
       }
       
       .stadium_text {
+        width: 250px;
         color: white;
         font-size: 14px;
         position: absolute;
@@ -295,6 +296,24 @@ body, html {
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        text-align: center;
+        text-align: left;
       }
+
+.bucket_list_table tr:nth-child(even){background-color: whitesmoke;}
+
+.bucket_list_table tr:hover {background-color:#93aed2;}
+
+.bucket_list_table th {
+        width: 250px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 5px;
+        text-align: left;
+        background-color: #003a66;
+        color: white;
+}
+
+.bucket_list_table td {
+        padding-left: 5px;
+}
 
