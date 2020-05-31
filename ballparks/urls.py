@@ -28,6 +28,9 @@ urlpatterns = [
     path('tracker', views.tracker),
     path('bucket', views.bucket),
     path('logout', views.logout),
-    path('home/add-to-bucketlist', views.bucket_add)
+    path('home/add-to-bucketlist', views.bucket_add),
+    path('remove_team/<int:id>', views.bucket_remove),
+    path('visited/<int:id>', views.bucket_visit),
+    path('visited-at/<int:id>', views.bucket_visited_at),
 
 ]

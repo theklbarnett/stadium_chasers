@@ -47,11 +47,13 @@
                                                 <th>Action Items</th>
                                         </thead>
                                         {% for stadium in stadiums %}
-                                        <tr>
-                                                <td>{{stadium.team}}</td>
-                                                <td><a href='/remove_team/{{team.id}}'>Remove</a> |
-                                                        <a href='/visited/{{team.id}}'>Visited</a>
-                                        </tr>
+                                                {% if stadium.visited == False %}
+                                                        <tr>
+                                                                <td>{{stadium.team}}</td>
+                                                                <td><a href='/remove_team/{{stadium.id}}'>Remove</a> |
+                                                                        <a href='/visited/{{stadium.id}}'>Visited</a>
+                                                        </tr>
+                                                {% endif %}
                                         {% endfor %}
                                 </table>
                         </div>
@@ -63,10 +65,22 @@
                                                 <th>Date Visited</th>
                                         </thead>
                                         {% for stadium in stadiums %} <!-- need a different for loop so it's not repeated like the one above -->
-                                        <tr>
-                                                <td></td> <!-- Insert jinja on this line -->
-                                                <td></td> <!-- Insert jinja on this line -->
-                                        </tr>
+                                                {% if stadium.visited %}
+                                                        <tr>
+                                                                <td>{{stadium.team}}</td>
+                                                                {% if stadium.visited_at %}
+                                                                        <td>{{stadium.visited_at}}</td> 
+                                                                {% else %}
+                                                                       <td>
+                                                                                <form method="POST" action="/visited-at/{{stadium.id}}">
+                                                                                        {% csrf_token %}
+                                                                                        <input type="date" name="visited_at">
+                                                                                        <button type="submit">Outta There!</button>
+                                                                                </form>
+                                                                        </td>  
+                                                                {% endif %}
+                                                        </tr>
+                                                {% endif %}
                                         {% endfor %}
                                 </table>
                         </div>

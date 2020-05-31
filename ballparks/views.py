@@ -78,10 +78,26 @@ def logout(request):
 	return redirect('/')
 
 def bucket_add(request):
-	print('hi')
 	team = request.GET.get('team', None).replace('-', ' ')
 	Ballpark.objects.create(team=team, visited=False, user=User.objects.get(id=request.session['user_id']))
 	data = {
 		'complete': True
 	}
 	return JsonResponse(data)
+
+def bucket_remove(request, id):
+	c = Ballpark.objects.get(id=id)
+	c.delete()
+	return redirect('/bucket')
+
+def bucket_visit(request, id):
+	c = Ballpark.objects.get(id=id)
+	c.visited = True
+	c.save()
+	return redirect('/bucket')
+
+def bucket_visited_at(request, id):
+	c = Ballpark.objects.get(id=id)
+	c.visited_at = request.POST['visited_at']
+	c.save()
+	return redirect('/bucket')
