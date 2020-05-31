@@ -30,7 +30,7 @@
                     if (teamInfo) {
                         map = new google.maps.Map(document.getElementById('map'), {
                             center: { lat: teamInfo['lat'], lng: teamInfo['lng'] },
-                            zoom: 10
+                            zoom: 15, 
                         });
                         var marker = new google.maps.Marker({ position: { lat: teamInfo['lat'], lng: teamInfo['lng'] }, map: map });
                     }
@@ -112,9 +112,10 @@
                     </form>
                 </div>
                 <div id="team_dropdown_list">
-                    <h3>Select a Stadium you want to visit:</h3>
+                    <h3>Your Journey Starts Here:</h3>
                     <select id="teams">
                         <optgroup label="AL Central">
+                            <option value="" disabled selected hidden>Choose a Team</option>
                             <option value="Chicago White Sox">Chicago White Sox</option>
                             <option value="Cleveland Indians">Cleveland Indians</option>
                             <option value="Detroit Tigers">Detroit Tigers</option>
@@ -130,7 +131,7 @@
                         </optgroup>
                         <optgroup label="AL West">
                             <option value="Houston Astros">Houston Astros</option>
-                            <option value="Los Angeles Angels">Los Angeles Angels</option>
+                            <option value="Anaheim Angels">Los Angeles Angels</option>
                             <option value="Oakland Athletics">Oakland Athletics</option>
                             <option value="Seattle Mariners">Seattle Mariners</option>
                             <option value="Texas Rangers">Texas Rangers</option>
@@ -144,7 +145,7 @@
                         </optgroup>
                         <optgroup label="NL East">
                             <option value="Atlanta Braves">Atlanta Braves</option>
-                            <option value="Miami Marlins">Miami Marlins</option>
+                            <option value="Florida Marlins">Miami Marlins</option>
                             <option value="New York Mets">New York Mets</option>
                             <option value="Philadelphia Phillies">Philadelphia Phillies</option>
                             <option value="Washington Nationals">Washington Nationals</option>

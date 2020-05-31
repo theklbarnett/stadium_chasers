@@ -1,17 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Bucket List - Where to next?</title>
+        {% load static %}
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
         <script src='main.js'></script>
 </head>
+
 <body>
-        <h2>list of where you want to go?</h2>
-        {% for stadium in stadiums %}
-        	<p>{{stadium.team}}</p>
-        {% endfor %}
+        <div id="skin">
+                <div id="wrapper">
+                        <div id="title">
+                                <h1>Welcome to MLB Ballpark Chasers!</h1>
+                        </div>
+                        <img id="MLB_logo"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <img id="MLB_logo_2"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <div class="navbar">
+                                <a href="/home">Home</a>
+                                <a href="/news">News</a>
+                                <li style="float:right"><a href="/logout">Logout</a></li>
+                                <div class="dropdown">
+                                        <button class="dropbtn" onclick="myFunction()">Stadiums
+                                                <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="dropdown-content" id="myDropdown">
+                                                <a href="/american">American League</a>
+                                                <a href="/national">National League</a>
+                                                <a href="/tracker">Where I've been</a>
+                                                <a href="/bucket">Bucket List</a>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="my_bucket_list_section">
+                                <h2>My Bucket List of Ballparks</h2>
+                                <table class="bucket_list_table">
+                                        <thead>
+                                                <th>Team</th>
+                                                <th>Action Items</th>
+                                        </thead>
+                                        {% for stadium in stadiums %}
+                                        <tr>
+                                                <td>{{stadium.team}}</td>
+                                                <td><a href='/remove_team/{{team.id}}'>Remove</a> |
+                                                        <a href='/visited/{{team.id}}'>Visited</a>
+                                        </tr>
+                                        {% endfor %}
+                                </table>
+                        </div>
+                        <div id="ballparks_visited_section">
+                                <h2>Ballparks I've Visited</h2>
+                                <table class="ballparks_visited_table">
+                                        <thead>
+                                                <th>Team</th>
+                                                <th>Date Visited</th>
+                                        </thead>
+                                        {% for stadium in stadiums %} <!-- need a different for loop so it's not repeated like the one above -->
+                                        <tr>
+                                                <td></td> <!-- Insert jinja on this line -->
+                                                <td></td> <!-- Insert jinja on this line -->
+                                        </tr>
+                                        {% endfor %}
+                                </table>
+                        </div>
+                </div>
+        </div>
 </body>
+
 </html>
