@@ -39,21 +39,37 @@
                                         </div>
                                 </div>
                         </div>
-                        <h2>My Bucket List of Ballparks</h2>
-                        <table class="bucket_list_table">
-                                <thead>
-                                        <th>Team</th>
-                                        <th>Action Items</th>
-                                </thead>
-                                {% for stadium in stadiums %}
-                                <tr>
-                                        <td>{{stadium.team}}</td>
-                                        <td><a href='/remove_team/{{team.id}}'>Remove</a> |
-                                        <a href='/visited/{{team.id}}'>Visited</a> |
-                                        <a href='/save_team/{{team.id}}'>Save for Later</a></td>
-                                </tr>
-                                {% endfor %}
-                        </table>
+                        <div id="my_bucket_list_section">
+                                <h2>My Bucket List of Ballparks</h2>
+                                <table class="bucket_list_table">
+                                        <thead>
+                                                <th>Team</th>
+                                                <th>Action Items</th>
+                                        </thead>
+                                        {% for stadium in stadiums %}
+                                        <tr>
+                                                <td>{{stadium.team}}</td>
+                                                <td><a href='/remove_team/{{team.id}}'>Remove</a> |
+                                                        <a href='/visited/{{team.id}}'>Visited</a>
+                                        </tr>
+                                        {% endfor %}
+                                </table>
+                        </div>
+                        <div id="ballparks_visited_section">
+                                <h2>Ballparks I've Visited</h2>
+                                <table class="ballparks_visited_table">
+                                        <thead>
+                                                <th>Team</th>
+                                                <th>Date Visited</th>
+                                        </thead>
+                                        {% for stadium in stadiums %} <!-- need a different for loop so it's not repeated like the one above -->
+                                        <tr>
+                                                <td></td> <!-- Insert jinja on this line -->
+                                                <td></td> <!-- Insert jinja on this line -->
+                                        </tr>
+                                        {% endfor %}
+                                </table>
+                        </div>
                 </div>
         </div>
 </body>

@@ -279,7 +279,7 @@ body, html {
         width: 100%;
         opacity: 0;
         transition: .5s ease;
-        background-color: #003a66;
+        background-color: #003a6683;
       }
       
       .img_container:hover .overlay {
@@ -299,12 +299,16 @@ body, html {
         text-align: left;
       }
 
+#my_bucket_list_section {
+        display: inline-block;
+        margin: 50px;
+}
 .bucket_list_table tr:nth-child(even){background-color: whitesmoke;}
 
 .bucket_list_table tr:hover {background-color:#93aed2;}
 
 .bucket_list_table th {
-        width: 250px;
+        width: 50%;
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 5px;
@@ -314,6 +318,28 @@ body, html {
 }
 
 .bucket_list_table td {
+        padding: 8px;
+}
+
+#ballparks_visited_section {
+        display: inline-block;
+        margin-left: 150px;
+}
+.ballparks_visited_table tr:nth-child(even){background-color: whitesmoke;}
+
+.ballparks_visited_table tr:hover {background-color:#93aed2;}
+
+.ballparks_visited_table th {
+        width: 50%;
+        padding-top: 12px;
+        padding-bottom: 12px;
         padding-left: 5px;
+        text-align: left;
+        background-color: #003a66;
+        color: white;
+}
+
+.ballparks_visited_table td {
+        padding: 8px;
 }
 
