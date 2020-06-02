@@ -3,8 +3,9 @@
 
 #skin{
         background-color: lightgray;
+        position: relative;
         width: 100%;
-        height: 100%;
+        height: 1400px;
 
 }
 #wrapper{
@@ -12,9 +13,10 @@
         margin: 0px auto;
         background-color: #f2f2f2;
         width: 90%;
-        height: 90%;
+        height: 100%;
         font-family: sans-serif;
-        padding: 25px;
+        
+        
 }
 #title{
         text-align: center;
@@ -24,12 +26,7 @@
         
 }
 
-#map {
-    display: inline-block;
-    width: 600px;
-    height: 400px;
-    margin-top: 175px;
-}
+
 
 #team_dropdown_list {
         margin: auto;
@@ -60,8 +57,8 @@
         width: 175px;
         height: 97px;
         position: absolute;
-        top: 33px;
-        left: 100px;
+        top: 0px;
+        left: 90px;
         
 }
 
@@ -69,8 +66,8 @@
         width: 175px;
         height: 97px;
         position: absolute;
-        top: 33px;
-        right: 100px;
+        top: 0px;
+        right: 90px;
 
 
 }
@@ -82,9 +79,17 @@
         vertical-align: top;
         text-align: center;
         margin-left: 200px;
-        margin-top: 175px;
+        margin-top: 5px;
        
 }
+#map {
+        display: inline-block;
+        width: 600px;
+        height: 400px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
 /*nav bar*/
 .navbar {
         overflow: hidden;
@@ -146,6 +151,95 @@
       
       .show {
         display: block;
+      }
+/*slideshow homepage*/
+
+.slide_container {
+        width: 1200px;
+        height: 400px;
+        margin-left: 200px;
+      }
+.lrg_slide{
+        width: 1200px;
+        height: 450px;
+}
+      
+      /* Hide the images by default */
+.mySlides {
+        display: none;
+      }
+      
+      /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+        cursor: pointer;
+      }
+      
+      /* Next & previous buttons */
+.prev,
+.next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      
+      /* Position the "next button" to the right */
+.next {
+        right: 285px;
+        border-radius: 3px 0 0 3px;
+      }
+      
+      /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      
+      /* Number text (1/3 etc) */
+.numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      
+      /* Container for image text */
+.caption-container {
+        text-align: center;
+        background-color: #003a66;
+        padding: 2px 16px;
+        color: white;
+      }
+      
+.row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Six columns side by side */
+.column {
+        float: left;
+        width: 16.66%;
+      }
+      
+      /* Add a transparency effect for thumnbail images */
+.demo {
+        opacity: 0.6;
+      }
+      
+.active,
+.demo:hover {
+        opacity: 1;
       }
 
 
