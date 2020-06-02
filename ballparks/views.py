@@ -61,8 +61,7 @@ def national_stadiums(request):
 	return render (request, 'national.html')
 
 
-def tracker(request):
-	return render (request, 'tracker.html')
+
 
 def bucket (request):
 	context = {
