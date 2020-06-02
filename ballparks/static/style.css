@@ -351,3 +351,18 @@ body, html {
         padding: 8px;
 }
 
+#bucket{
+        margin-left: 50px;
+}
+
+.bucket_button{
+        background-color: whitesmoke;
+        color: black;
+        text-decoration: none;
+        border-radius: 2px;
+        padding: 2px;
+        margin-left: 50px;
+
+}
+        
+
