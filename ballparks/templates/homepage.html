@@ -34,6 +34,35 @@
                         });
                         var marker = new google.maps.Marker({ position: { lat: teamInfo['lat'], lng: teamInfo['lng'] }, map: map });
                     }
+
+                    // Trying to get the routing to work for the map
+                    /*if ($('#start').val() != '') {
+                        var startLatLng = $.ajax({ 
+                                url: 'https://maps.googleapis.com/maps/api/geocode/json/?address=' + $('#start').val().replace(/ /g, "+") + '&key=AIzaSyA_diFlhZur7BRvK9UJVXtU5akeXjDEFmU',
+                                type: "GET",   
+                                dataType: 'jsonp',
+                                cache: false
+                            });
+
+                        var start = new google.maps.LatLng(startLatLng);
+                        var end = new google.maps.LatLng(teamInfo['lat'], teamInfo['lng']);
+                        var directionsService = new google.maps.DirectionsService();
+                        var directionsDisplay = new google.maps.DirectionsRenderer();
+                        directionsDisplay.setMap(map);
+                        var request = {
+                                origin: start,
+                                destination: end,
+                                travelMode: 'DRIVING'
+                        };
+
+                        directionsService.route(request, function(response, status) {
+                                if(status == 'OK') {
+                                        directionsDisplay.setDirections(response);
+                                        console.log('hi');
+                                } else {
+                                }
+                        });
+                    } */
                 }, "json");
             });
 
@@ -212,7 +241,7 @@
                     <h3>Starting location:</h3>
                     <form action="/start" method="POST">
                         {% csrf_token %}
-                        <input type="text" name="location">
+                        <input type="text" name="location" id="start">
                         <input type="submit" value="Find Me!">
                     </form>
                 </div>
