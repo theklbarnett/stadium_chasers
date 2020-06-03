@@ -8,6 +8,28 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+                $(document).ready(function() {
+                        $('.bucket_button').click(function(e) {
+                                e.preventDefault();
+                        });
+                        $('.bucket_button').click(function() {
+                                var teamName = $(this).siblings('.team_name').text().slice(12);
+                                $.ajax({
+                                    url: '/home/add-to-bucketlist',
+                                    data: {
+                                        'team': teamName.replace(' ', '-')
+                                    },
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        if (data['complete'] == true) {
+                                        }
+                                    }
+                                });
+                        });
+                });
+        </script>
 </head>
 
 <body>
@@ -65,13 +87,13 @@
                                                 alt="CITI FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: New York Mets</li>
+                                                        <li class="team_name"> Home Team: New York Mets</li>
                                                         <li> Location: Corona, NY</li>
                                                         <li> Opened: April 13, 2009</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 42,000</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
 
@@ -86,13 +108,13 @@
                                                 alt="BUSCH STADIUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: St. Louis Cardinals</li>
+                                                        <li class="team_name"> Home Team: St. Louis Cardinals</li>
                                                         <li> Location: St. Louis, MO</li>
                                                         <li> Opened: April 10, 2006</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 45,700</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -105,13 +127,13 @@
                                                 alt="CHASE FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Arizona Diamondbacks</li>
+                                                        <li class="team_name"> Home Team: Arizona Diamondbacks</li>
                                                         <li> Location: Phoenix, AZ</li>
                                                         <li> Opened: March 31, 1998</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 48,633</li>
                                                         <li> Surface: Synthetic Turf</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -125,13 +147,13 @@
                                                 alt="CITIZENS BANK PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Philadelphia Phillies</li>
+                                                        <li class="team_name"> Home Team: Philadelphia Phillies</li>
                                                         <li> Location: Philadelphia, PA</li>
                                                         <li> Opened: April 12, 2004</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 43,647</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -145,13 +167,13 @@
                                                 alt="GREAT AMERICAN BALL PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Cincinnati Reds</li>
+                                                        <li class="team_name"> Home Team: Cincinnati Reds</li>
                                                         <li> Location: Cincinnati, OH</li>
                                                         <li> Opened: March 31, 2003</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 42,271</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -166,13 +188,13 @@
                                                 alt="COORS FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Colorado Rockies</li>
+                                                        <li class="team_name"> Home Team: Colorado Rockies</li>
                                                         <li> Location: Denver, CO</li>
                                                         <li> Opened: April 26, 1995</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 50,398</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -185,13 +207,13 @@
                                                 alt="MARLINS PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Miami Marlins</li>
+                                                        <li class="team_name"> Home Team: Miami Marlins</li>
                                                         <li> Location: Miami, FL</li>
                                                         <li> Opened: April 4, 2012</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 37,442</li>
                                                         <li> Surface: Shaw Synthentic Turf’s B1K</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -205,13 +227,13 @@
                                                 alt="MILLER PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Milwaukee Brewers</li>
+                                                        <li class="team_name"> Home Team: Milwaukee Brewers</li>
                                                         <li> Location: Milwaukee, WI</li>
                                                         <li> Opened: April 6, 2001</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 41,900</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -225,13 +247,13 @@
                                                 alt="DODGER STADIUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Los Angeles Dodgers</li>
+                                                        <li class="team_name"> Home Team: Los Angeles Dodgers</li>
                                                         <li> Location: Los Angeles, CA</li>
                                                         <li> Opened: April 10, 1962</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 56,000</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -245,13 +267,13 @@
                                                 alt="NATIONALS PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Washington Nationals</li>
+                                                        <li class="team_name"> Home Team: Washington Nationals</li>
                                                         <li> Location: Washington, DC</li>
                                                         <li> Opened: March 30, 2008</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 43,3416</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -265,13 +287,13 @@
                                                 alt="PNC PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Pittsburgh Pirates</li>
+                                                        <li class="team_name"> Home Team: Pittsburgh Pirates</li>
                                                         <li> Location: Pittsburgh, PA</li>
                                                         <li> Opened: April 9, 2001</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 38,362</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -285,13 +307,13 @@
                                                 alt="ORACLE PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: San Francisco Giants</li>
+                                                        <li class="team_name"> Home Team: San Francisco Giants</li>
                                                         <li> Location: San Francisco, CA</li>
                                                         <li> Opened: April 11, 2000</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 41,915</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -305,13 +327,13 @@
                                                 alt="TRUIST PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Atlanta Braves</li>
+                                                        <li class="team_name"> Home Team: Atlanta Braves</li>
                                                         <li> Location: Atlanta, GA</li>
                                                         <li> Opened: April 13, 2017</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 41,500</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
 
                                                 </div>
@@ -325,13 +347,13 @@
                                                 alt="WRIGLEY FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Chicago Cubs</li>
+                                                        <li class="team_name"> Home Team: Chicago Cubs</li>
                                                         <li> Location: Chicago, IL</li>
                                                         <li> Opened: April 23, 1914</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 41,160</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
                                                 </div>
                                         </div>
@@ -344,13 +366,13 @@
                                                 alt="PETCO PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: San Diego Padres</li>
+                                                        <li class="team_name"> Home Team: San Diego Padres</li>
                                                         <li> Location: San Diego, CA</li>
                                                         <li> Opened: April 8, 2004</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 41,164</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket
                                                                 List</a>
                                                 </div>
                                         </div>

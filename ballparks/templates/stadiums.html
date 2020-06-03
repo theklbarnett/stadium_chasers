@@ -8,6 +8,30 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+                $(document).ready(function() {
+                        $('.bucket_button').click(function(e) {
+                                e.preventDefault();
+                        });
+                        $('.bucket_button').click(function() {
+                                var teamName = $(this).siblings('.team_name').text().slice(12);
+                                console.log(teamName);
+                                console.log('hi');
+                                $.ajax({
+                                    url: '/home/add-to-bucketlist',
+                                    data: {
+                                        'team': teamName.replace(' ', '-')
+                                    },
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        if (data['complete'] == true) {
+                                        }
+                                    }
+                                });
+                        });
+                });
+        </script>
 </head>
 
 <body>
@@ -65,13 +89,13 @@
                                                 alt="CAMDEN YARDS" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Baltimore Orioles</li>
+                                                        <li class="team_name"> Home Team: Baltimore Orioles</li>
                                                         <li> Location: Baltimore, MD</li>
                                                         <li> Opened: April 6, 1992</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 45,971</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
                                                         
                                                 </div>
                                         </div>
@@ -84,13 +108,13 @@
                                                 alt="COMERICA PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Detroit Tigers</li>
+                                                        <li class="team_name"> Home Team: Detroit Tigers</li>
                                                         <li> Location: Detroit, MI</li>
                                                         <li> Opened: April 11, 2000</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 41,574</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
                                                 </div>
                                         </div>
                                 </div>
@@ -102,13 +126,13 @@
                                                 alt="ANGEL STADIUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Los Angeles Angels</li>
+                                                        <li class="team_name"> Home Team: Los Angeles Angels</li>
                                                         <li> Location: Anaheim, CA</li>
                                                         <li> Opened: April 19, 1966</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 45,493</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
                                                 </div>
                                         </div>
                                 </div>
@@ -120,13 +144,13 @@
                                                 alt="FENWAY PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Boston Red Sox</li>
+                                                        <li class="team_name"> Home Team: Boston Red Sox</li>
                                                         <li> Location: Boston, MA</li>
                                                         <li> Opened: April 20, 1912</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 37,673</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
                                                 </div>
                                         </div>
                                 </div>
@@ -138,13 +162,13 @@
                                                 alt="GUARANTEED RATE FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Chicago White Sox</li>
+                                                        <li class="team_name"> Home Team: Chicago White Sox</li>
                                                         <li> Location: Chicago, IL</li>
                                                         <li> Opened: April 18, 1991</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 40,615</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -157,13 +181,13 @@
                                                 alt="GLOBE LIFE FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Texas Rangers</li>
+                                                        <li class="team_name"> Home Team: Texas Rangers</li>
                                                         <li> Location: Arlington, TX</li>
                                                         <li> Opened: March 31, 2020 (delayed)</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 40,300</li>
                                                         <li> Surface: Synthetic Turf</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -177,13 +201,13 @@
                                                 alt="ROGERS CENTRE" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Toronto Blue Jays</li>
+                                                        <li class="team_name"> Home Team: Toronto Blue Jays</li>
                                                         <li> Location: Toronto, Ontario, Canada</li>
                                                         <li> Opened: June 5, 1989</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 50,516</li>
                                                         <li> Surface: Fieldturf</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -195,13 +219,13 @@
                                                 alt="KAUFFMAN STADIUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Kansas City Royals</li>
+                                                        <li class="team_name"> Home Team: Kansas City Royals</li>
                                                         <li> Location: Kansas City, MO</li>
                                                         <li> Opened: April 10, 1973</li>
                                                         <li> Environment:Open Air</li>
                                                         <li> Capacity: 38,177</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -228,13 +252,13 @@
                                                 alt="TROPICANA FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Tampa Bay Rays</li>
+                                                        <li class="team_name"> Home Team: Tampa Bay Rays</li>
                                                         <li> Location: St. Petersburg, FL</li>
                                                         <li> Opened: March 31, 1998 (MLB)</li>
                                                         <li> Environment: Closed Dome</li>
                                                         <li> Capacity: 42,735</li>
                                                         <li> Surface: Shaw Sports Turf</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -247,13 +271,13 @@
                                                 alt="PROGRESSIVE FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Cleveland Indians</li>
+                                                        <li class="team_name"> Home Team: Cleveland Indians</li>
                                                         <li> Location: Cleveland, OH</li>
                                                         <li> Opened: April 4, 1994</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 35,225</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -266,13 +290,13 @@
                                                 alt="RINGCENTRAL COLISEUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Oakland Athletics</li>
+                                                        <li class="team_name"> Home Team: Oakland Athletics</li>
                                                         <li> Location: Oakland, CA</li>
                                                         <li> Opened: April 17, 1968</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 47,170</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -285,13 +309,13 @@
                                                 alt="YANKEE STADIUM" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: New York Yankees</li>
+                                                        <li class="team_name"> Home Team: New York Yankees</li>
                                                         <li> Location: Bronx, NY</li>
                                                         <li> Opened: April 16, 2009</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 50,287</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -304,13 +328,13 @@
                                                 alt="TARGET FIELD" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Minnesota Twins</li>
+                                                        <li class="team_name"> Home Team: Minnesota Twins</li>
                                                         <li> Location: Minneapolis, MN</li>
                                                         <li> Opened: April 12, 2010</li>
                                                         <li> Environment: Open Air</li>
                                                         <li> Capacity: 39,029</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
@@ -323,13 +347,13 @@
                                                 alt="T-MOBILE PARK" class="image">
                                         <div class="overlay">
                                                 <div class="stadium_text">
-                                                        <li> Home Team: Seattle Mariners</li>
+                                                        <li class="team_name"> Home Team: Seattle Mariners</li>
                                                         <li> Location: Seattle, WA</li>
                                                         <li> Opened: July 15, 1999</li>
                                                         <li> Environment: Retractable Roof</li>
                                                         <li> Capacity: 47,574</li>
                                                         <li> Surface: Grass</li><br>
-                                                        <a href="/bucket" class="bucket_button">Add to My Bucket List</a>
+                                                        <a href="/home/add-to-bucketlist" class="bucket_button">Add to My Bucket List</a>
 
                                                 </div>
                                         </div>
