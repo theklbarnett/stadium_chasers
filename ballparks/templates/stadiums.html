@@ -16,8 +16,6 @@
                         });
                         $('.bucket_button').click(function() {
                                 var teamName = $(this).siblings('.team_name').text().slice(12);
-                                console.log(teamName);
-                                console.log('hi');
                                 $.ajax({
                                     url: '/home/add-to-bucketlist',
                                     data: {
