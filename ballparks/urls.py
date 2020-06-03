@@ -25,6 +25,7 @@ urlpatterns = [
     path('create_user/', views.register_user),
     path('american', views.stadium_info),
     path('national', views.national_stadiums),
+    path('news', views.news),
     path('bucket', views.bucket),
     path('logout', views.logout),
     path('home/add-to-bucketlist', views.bucket_add),
