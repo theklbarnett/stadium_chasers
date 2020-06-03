@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>News - get updated on everything going on in the MLB and its parks!</title>
+        {% load static %}
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src='main.js'></script>
+</head>
+
+<body>
+        <div id="news_skin">
+                <div id="news_wrapper">
+                        <div id="title">
+                                <h1>Welcome to MLB Ballpark Chasers!</h1>
+                        </div>
+                        <img id="MLB_logo"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <img id="MLB_logo_2"
+                                src="https://www.wjbf.com/wp-content/uploads/sites/47/2019/05/MLB-LOGO-2019_1559173330562_89779335_ver1.0.png?w=570&h=375&crop=1&resize=1280,720"
+                                alt="MLB Logo">
+                        <div class="navbar">
+                                <a href="/home">Home</a>
+                                <a href="/news">News</a>
+                                <li style="float:right"><a href="/logout">Logout</a></li>
+                                <div class="dropdown">
+                                        <button class="dropbtn" onclick="myFunction()">Stadiums
+                                                <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="dropdown-content" id="myDropdown">
+                                                <a href="/american">American League</a>
+                                                <a href="/national">National League</a>
+                                                <a href="/bucket">Bucket List</a>
+                                        </div>
+                                </div>
+                                <script>
+
+                                        function myFunction() {
+                                                document.getElementById("myDropdown").classList.toggle("show");
+                                        }
+
+
+                                        window.onclick = function (e) {
+                                                if (!e.target.matches('.dropbtn')) {
+                                                        var myDropdown = document.getElementById("myDropdown");
+                                                        if (myDropdown.classList.contains('show')) {
+                                                                myDropdown.classList.remove('show');
+                                                        }
+                                                }
+                                        }
+                                </script>
+                        </div>
+
+                        <h2 id="news_title">Best Ballparks MLB Rankings in 2019!</h2>
+                        <img class="news_images"
+                                src="https://www.nbcsports.com/washington/sites/csnma/files/styles/gallery_image_2x/public/2016/04/24/mlb-best-ballparks--v2.png?itok=v3EDXFad&timestamp=1461514978"
+                                alt="MLB ballparks rankings">
+
+                        <div class="news_info">
+                                <p>What are the best MLB ballparks? We rank them from top to bottom in our annual Best
+                                        of the Ballparks MLB rankings, updated for the 2019 season.
+                                        Everyone has a favorite ballpark, whether it be the site of one’s first MLB
+                                        game, home to a memorable moment, or the hometown favorite where we’ve spent the
+                                        most time over the years. In this list, we’re taking a step back from emotional
+                                        choices and ranking the MLB ballparks from top to bottom. We don’t expect
+                                        everyone to agree with our choices, and you’ll have the chance to register your
+                                        agreement or disagreement when we launch the Best of the Ballparks 2019 vote
+                                        next Monday.</p>
+
+                                <p>One thing to note here. We’ve broken down this list into three subcategories. The top
+                                        seven MLB ballparks are in a league of their own, and one could argue that any
+                                        of the seven could be deemed the best in all of baseball: really, there’s not
+                                        much sunlight between PNC Park and Dodger Stadium when you look at factors like
+                                        fan amenities, architectural distinction, and history. The next 17 ballparks are
+                                        all very good ballparks, but they don’t measure up to the best in MLB. (If your
+                                        favorite is in this group, more power to you, and we hope you enjoy the ballpark
+                                        experience.) And the bottom six ballparks are either slated for replacement or
+                                        acknowledged by teams as needing plenty TLC.</p>
+
+                        </div>
+
+                        <h2 class="article_header">Top 5 Stadiums to see</h2>
+                        
+                        <div class="news_articles">
+                                <p>#1 PNC Park A past winner in the fan vote for Best of the Ballparks, the home of the
+                                        Pittsburgh Pirates is a beloved facility that combines the perfect site, lots of
+                                        architectural distinction, and many memorable fan amenities that are upgraded
+                                        annually. There are plenty of reminders of the rich history of the Bucs, while
+                                        walking across the Roberto Clemente Bridge on a game day is a memorable
+                                        experience for Pirates fans. Add to that the above-average concessions,
+                                        virtually perfect sightlines and a commitment from the team to perform annual
+                                        upgrades, and you have our pick for the best ballpark in baseball. (2018 rank:
+                                        #1)</p>
+
+                                <p>#2 Wrigley Field The second-oldest ballpark in the majors is also turning into one of
+                                        the newest ones, as the Cubs are in the last stretches of a $550-million
+                                        modernization plan that upgraded fan experiences and player facilities. Opening
+                                        as Weeghman Park in 1914 as the home of the Chi-Feds, Wrigley Field has been
+                                        altered over the years—the grandstand was split apart and expanded in 1923, a
+                                        second deck was added in 1926-1927, and the legendary bleachers were rebuilt in
+                                        2005-2006—but even with all the changes, you get the sense that the ballpark,
+                                        for the most part, remains true to architect Zachary Taylor Davis’s original
+                                        vision. Today there’s something for everyone at Wrigley Field: a private club
+                                        for high rollers, grandstand seating close to the action, and outfield bleachers
+                                        for those more interested in a social scene than a baseball game. More clubs and
+                                        social spaces debuted in 2019, as the 1060 Project draws to a close. (2018 rank:
+                                        #3)</p>
+
+                                <p>#3 Oracle Park Could there be any better location for baseball in San Francisco than
+                                        a waterfront site used to great advantage by the ballpark architects? The views
+                                        from the grandstand and outfield concourse of San Francisco and the Bay are
+                                        tremendous, and walking around the ballpark is a delight. The Giants’ rich
+                                        history, as well as San Francisco’s PCL history, is memorialized in and outside
+                                        of the ballpark. It’s also the most transit-friendly ballpark in the majors,
+                                        accessible via car, train, bus, bike, boat and ridesharing. This is the ballpark
+                                        that originally gave us garlic fries and it still offers a distinctive food
+                                        program. (2018 rank: #2)</p>
+
+                                <p>#4 Fenway Park The oldest ballpark in the majors, Fenway Park still retains a high
+                                        amount of old-time charm. We all focus on the areas that have been updated in
+                                        the past decade—the Green Monster seating, the right-field corner seating, the
+                                        renovated center-field food area—but there’s lots to Fenway Park that’s
+                                        authentically vintage, and it’s those areas we love. Yes, the concourses are
+                                        cramped, the seats are ill-designed for the modern posterior, and parking is a
+                                        nightmare. Having said that, a game at Fenway Park is an essential baseball
+                                        experience and should be on every fan’s bucket list. (2018 rank: #4)</p>
+
+                                <p>#5 Target Field Walt Disney once said that Disneyland would never be completed, as it
+                                        would grow and change as long as there is imagination left in the world. And
+                                        while Target Field is hardly Disneyesque, the Minnesota Twins do show the
+                                        inclination to make annual upgrades to the ballpark. Last year saw the major
+                                        conversion of a private dining space for season-ticket holders to a public
+                                        social space—a sports bar on steroids to enhance the ballpark experience—and
+                                        this season saw the addition of a “living” batter’s eye and a new outdoor space
+                                        with pop-up vendors and kids’ activities. Add in plenty of Minnesota connections
+                                        on the food and beverage front, great sightlines, plenty of discrete seating
+                                        areas for all kinds of fans, and an abundance of spots just for standing around
+                                        to watch a ballgame, and you have a pretty good blueprint for new and renovated
+                                        ballparks of all kinds. (2018 rank: #5))</p>
+
+
+                        </div>
+                        <h2 class="article_header">Upcoming Stadium Renovations</h2>
+                        <div class="news_articles">
+                                <img class="news_images"
+                                src="https://ballparkdigest.com/wp-content/uploads/2019/12/Busch-Stadium-party-suite-renovation-rendering-1.jpg"
+                                alt="Busch stadium">
+                                <h3>Busch Stadium</h3>
+                                <p>Prior to the 2020 season, the St. Louis Cardinals will renovate Party Suites as part of a multi-million dollar project aimed at enhancing the experience for groups. In all, 21 existing Party Suites down the right line field at Busch Stadium will be overhauled to receive an updated look. The Party Suites are being marketed to groups of 32 or more, and will feature a buffet and full-service bar.</p>
+                                <img class="news_images"
+                                src="https://ballparkdigest.com/wp-content/uploads/2020/02/dodgerstadium2020-1-1024x576.jpg"
+                                alt="Dodgers Stadium">
+                                <h3>Dodger Stadium</h3>
+                                <p>The Los Angeles Dodgers will complete $100 million in renovations prior to the 2020 season. A new center field plaza will feature food and beverage areas, along with a children’s play area, and space for live entertainment. Fans will access the plaza through a new outfield entryway (shown above), where a relocated Jackie Robinson statue—moving from its current location in the left-field reserve plaza—will be on prominent display. Connectivity is also a major part of the renovations. Elevators and escalators will allow fans in all parts of Dodger Stadium to access the new plaza, while bridges will be incorporated to connect new outfield standing room areas to the rest of the ballpark. Plans also call for a replacement of the speaker tower in center field, as well as new restrooms in the left and right-field pavilions, and enclosed bars that will give fans an up-close look at the bullpens. Seating upgrades are also on tap, with improved options for fans with disabilities and new home run seats—to be placed in front of existing pavilion seating—set to be installed.)</p>
+                                <img class="news_images"
+                                src="https://ballparkdigest.com/wp-content/uploads/2019/10/Great-American-Ball-Park-Press-Club.jpg"
+                                alt="American Ball Park">
+                                <h3>Great American Ball Park</h3>
+                                <p>Leading up to the 2020 season, the Cincinnati Reds will convert space behind home plate reserved for working media members into a premium area. Dubbed the Press Club, the space will feature a mixture of seating options that include four-top tables, extra wide theatre-style seating, and high-top chairs. In addition, the club space will offer include all-inclusive food and beverages; a fully stocked bar that serves a broad selection of bourbon, beer, wine and spirits; high-end food options with customizable offerings, and in-seat service. The addition of the Press Club is not the only change coming to Great American Ball Park, as the Reds will create space for working media members down the third-base side on the Suite Level and are expected to install a new videoboard.</p>
+                                <img class="news_images"
+                                src="https://ballparkdigest.com/wp-content/uploads/2019/08/Fenway-Theater-rendering.jpg"
+                                alt="Fenway Theater">
+                                <h3>Fenway Park</h3>
+                                <p>The Boston Red Sox are looking to complete another round of changes to MLB’s oldest ballpark. Bleacher upgrades and a new function room would be part of the project, while a new 5,000-seat theater in collaboration with Live Nation is planned at Lansdowne and Ipswich streets. The theater, named MGM Music Hall at Fenway as the result of a partnership with MGM Results International, broke ground this fall in anticipation of a 2021 opening.</p>
+                                <img class="news_images"
+                                src="https://ballparkdigest.com/wp-content/uploads/2020/02/Miller-Lite-Landing-rendering-1-1.jpg"
+                                alt="Miller Park">
+                                <h3>Miller Park</h3>
+                                <p>In the 2020 season, the Milwaukee Brewers will debut Miller Lite Landing–a space in the left-center field Loge Level that offers three rows of seating with tables, a viewing deck with charging stations, flat screen high definition TVs and a seven-foot Brewers logo made of Miller Lite cans, providing what should be a sought-after selfie spot. In addition, the viewing deck will include cold drink holders that are built into the rails. Elsewhere in the ballpark, the former Miller Lite Deck will be rebranded as the Leinie Lodge, while a Terrapin Beer Company bar is set to debut later in the season.</p>
+
+
+                        </div>
+                        
+                        
+                        
+
+
+
+
+
+                </div>
+                <div id="footer">
+
+                        <div id="about">
+                                <h3>About Us</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Reprehenderit blanditiis architecto modi at adipisci!</p>
+
+                        </div>
+
+                        <div id="links">
+                                <h3>Useful Links</h3>
+                                <a href="/home" style="color:#003a66;">Home</a></br>
+                                <a href="/news" style="color:#003a66;">News</a></br>
+                                <a href="/bucket" style="color:#003a66;">Bucket List</a></br>
+
+
+
+
+                        </div>
+                        <div id="subcribe">
+                                <h3>Subscribe for Updates</h3>
+                                <p>Subcribe here to get the latest News and Updates!</p>
+                                <button type="button" class="sub_button">Atta Boy! (or Girl!)</button>
+
+                        </div>
+
+
+
+
+                </div>
+        </div>
+</body>
+
+</html>
